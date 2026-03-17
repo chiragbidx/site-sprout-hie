@@ -111,3 +111,30 @@ export const featureItems = pgTable("feature_items", {
     .notNull()
     .defaultNow(),
 });
+
+export const crmCustomers = pgTable(
+  "crm_customers",
+  {
+    id: text("id")
+      .notNull()
+      .default(sql`gen_random_uuid()`)
+      .primaryKey(),
+    teamId: text("team_id")
+      .notNull()
+      .references(() => teams.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    email: text("email").notNull(),
+    phone: text("phone"),
+    company: text("company"),
+    notes: text("notes").default(""),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => [
+    uniqueIndex("crm_customers_team_email_idx").on(table.teamId, table.email),
+  ]
+);
