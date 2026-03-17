@@ -7,9 +7,10 @@ import {
   ChevronDown,
   Home,
   Hammer,
-  Settings,
   Users,
   CreditCard,
+  Settings,
+  Contact as ContactIcon,
 } from "lucide-react";
 import {
   Collapsible,
@@ -33,6 +34,11 @@ const sections: { title: string; items: NavItem[] }[] = [
         label: "Feature",
         href: "/dashboard/feature",
         icon: Hammer,
+      },
+      {
+        label: "CRM",
+        href: "/dashboard/crm",
+        icon: ContactIcon,
       },
     ],
   },
