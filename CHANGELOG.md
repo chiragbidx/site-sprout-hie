@@ -22,4 +22,15 @@ Files changed:
 - app/dashboard/crm/client.tsx
 - components/dashboard/sidebar-nav.tsx
 
+## [2024-05-31] Homepage rebranding and CRM positioning
+
+- Refreshed all homepage sections for ClientPilot CRM branding and value proposition
+- Updated hero, benefits, feature grid, services, pricing, testimonials, contact, footer, and navbar
+- Owner/contact info now reflects Chirag Dodiya (hi@chirag.co)
+- CRM dashboard and capabilities now highlighted throughout
+- No changes to functional code or route structure
+
+Files changed:
+- content/home.ts
+
 [/Changelog]
