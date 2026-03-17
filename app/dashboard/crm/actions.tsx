@@ -6,7 +6,8 @@ import { crmCustomers } from "@/lib/db/schema";
 import { eq, and } from "drizzle-orm";
 import { getAuthSession } from "@/lib/auth/session";
 
-const CRMCustomerSchema = z.object({
+// Export Zod schema for use in both server actions and client UI
+export const CRMCustomerSchema = z.object({
   id: z.string().optional(),
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email"),
